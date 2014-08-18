@@ -1,0 +1,8 @@
+Sidebars/Menu
+	- find a way to create the sidebar/menu 
+	  to the side of the game window
+	  (related: line ~20 src.js)
+
+Separting game and init
+	- should I separate the game creation
+	  and web-interface creation?
