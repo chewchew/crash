@@ -2,11 +2,11 @@ var resolution = [900,600];
 var game = null;
 
 function preload() {
-	
+	game.load.image('player','assets/player-base-sprite.png');
 }
 
 function create() {
-	
+	game.add.sprite(resolution[0]/2,resolution[1]/2, 'player');
 }
 
 function update() {
