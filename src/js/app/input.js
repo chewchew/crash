@@ -1,5 +1,5 @@
 
-define(['entity'],function(){
+define(function(){
 	var speed = 5;
 	return function handleInput(player,cursors) {
 		if (cursors.right.isDown) {

@@ -1,6 +1,6 @@
 
-define("entity", function() {
-	var entity = function Entity(moveSpeed) {
+define(function() {
+	var entity = function(moveSpeed) {
 		this.moveSpeed = moveSpeed;
 		this.position  = {
 			x:0,
@@ -8,18 +8,18 @@ define("entity", function() {
 		};
 	}
 
-	var player = function PlayerEntity(moveSpeed,sprite) {
-		Entity.call(this,moveSpeed);
+	var player = function(moveSpeed,sprite) {
+		entity.call(this,moveSpeed);
 
 		this.sprite = sprite;
 	}
 
-	PlayerEntity.prototype = Object.create(Entity.prototype);
+	player.prototype = Object.create(entity.prototype);
 
 	/* --- direction ---
 		left  - 'left,'l' 
 		right - 'right','r' */
-	PlayerEntity.prototype.move = function(direction) {
+	player.prototype.move = function(direction) {
 		if (direction == 'left' ||
 			direction == 'l') {
 			this.sprite.x -= moveSpeed;
