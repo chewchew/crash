@@ -1,36 +1,36 @@
 
 define(function() {
-	var entity = function(moveSpeed) {
-		this.moveSpeed = moveSpeed;
+	/* === Entity === */
+	var Entity = function() {
+		this.moveSpeed = 0;
 		this.position  = {
 			x:0,
 			y:0
 		};
 	}
 
-	var player = function(moveSpeed,sprite) {
-		entity.call(this,moveSpeed);
+	/* === Player === */
+	var Player = function() {
+		Entity.call(this);
 
-		this.sprite = sprite;
+		this.sprite = null;
 	}
 
-	player.prototype = Object.create(entity.prototype);
-
-	/* --- direction ---
+	/* - move -
 		left  - 'left,'l' 
 		right - 'right','r' */
-	player.prototype.move = function(direction) {
+	Player.prototype.move = function(direction) {
 		if (direction == 'left' ||
 			direction == 'l') {
-			this.sprite.x -= moveSpeed;
+			this.sprite.x -= this.moveSpeed;
 		} else if (direction == 'right' ||
 				   direction == 'r') {
-			this.position.x += moveSpeed;
+			this.sprite.x += this.moveSpeed;
 		}
 	}
 
 	return {
-		entity : entity,
-		player : player
+		entity : new Entity(),
+		player : new Player()
 	};
 })
