@@ -8,6 +8,8 @@ define(function(){
 			player.move('right');
 		} else if (cursors.left.isDown) {
 			player.move('left');
+		} else {
+			player.move('none');
 		}
 	}
 })

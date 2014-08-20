@@ -1,4 +1,4 @@
-define(['app/input','app/entity'],function(input,entity) {
+define(['app/input','app/entity','app/physics'],function(input,entity,physics) {
 	var handleInput = input;
 
 	var game;
@@ -14,11 +14,18 @@ define(['app/input','app/entity'],function(input,entity) {
 
 	/* create */
 	function create() {
+		game.physics.startSystem(Phaser.Physics.Arcade);
+
 		/* === Create player === */
 		var playerSprite = game.add.sprite(200,200, 'player');
-		player = entity.player;
-		player.moveSpeed = 10;
+		player 		  	 = entity.player;
 		player.sprite 	 = playerSprite;
+		
+		/* -- physics -- */
+		game.physics.arcade.enable(playerSprite);
+		playerSprite.body.gravity.y = 400;
+		player.moveAcceleration   = 0.1;
+		player.moveDeacceleration = 0.9;
 		player.move('right');
 	}
 
