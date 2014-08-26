@@ -2,11 +2,15 @@ var resolution = [900,600];
 var game = null;
 
 function preload() {
-	game.load.image('player','assets/player-base-sprite.png');
+	game.load.spritesheet('player', 'assets/player_sketch-stand-sheet-resized.png', 102, 120);
 }
 
 function create() {
-	game.add.sprite(resolution[0]/2,resolution[1]/2, 'player');
+	this.game.stage.backgroundColor = '#DDDDDD';
+
+	var player = game.add.sprite(resolution[0]/2,resolution[1]/2, 'player');
+	player.animations.add('stand',[0,1,2,3,4,5],5,true);
+	player.animations.play('stand');
 }
 
 function update() {
