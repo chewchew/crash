@@ -1,8 +1,6 @@
-define(['app/input','app/entity','app/physics'],function(input,entity,physics) {
-	var handleInput = input;
 
+define(['app/input','app/entity','app/physics'],function(handleInput,entity,physics) {
 	var game;
-
 	var cursors;
 
 	/* preload */
@@ -26,7 +24,6 @@ define(['app/input','app/entity','app/physics'],function(input,entity,physics) {
 		playerSprite.body.gravity.y = 400;
 		player.moveAcceleration   = 0.1;
 		player.moveDeacceleration = 0.9;
-		player.move('right');
 	}
 
 	/* update */
