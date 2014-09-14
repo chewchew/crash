@@ -17,14 +17,6 @@ function update() {
 	
 }
 
-/* === init(wrap,gameContainer) ===
-	wrap -------------------------- 	
-		id of wrapping element 
-		used for centering content
-	gameContainer -----------------
-		the element that should 
-		contain the	game window 
-   ================================ */
 define(function(require) {
 	// setup libraries
 	require('phaser');
